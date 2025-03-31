@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import { useState } from "react"
 
 export default function Home() {
-  const { register, handleSubmit, formState: { errors } } = useForm()
+  const { register, handleSubmit, formState: { errors } } = useForm<FormData>()
   const router = useRouter()
   const [loginError, setLoginError] = useState(false)
   type FormData = {
