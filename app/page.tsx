@@ -8,8 +8,12 @@ export default function Home() {
   const { register, handleSubmit, formState: { errors } } = useForm()
   const router = useRouter()
   const [loginError, setLoginError] = useState(false)
-
-  const onSubmit = (data: any) => {
+  type FormData = {
+    username: string;
+    password: string;
+  };
+  
+  const onSubmit = (data: FormData) => {
     const { username, password } = data
     if (username === "admin" && password === "1234") {
       router.push("/welcome")
